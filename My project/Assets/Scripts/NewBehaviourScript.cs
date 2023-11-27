@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour
 {
     public Text x;
-    public int c;
+    public int c = 0;
     public GameObject obj;
     // Start is called before the first frame update
-    public bool a;
+    public bool a=true;
     public void Active()
     {
         
@@ -23,6 +23,11 @@ public class NewBehaviourScript : MonoBehaviour
             obj.SetActive(true);
             a = true;
         }
+    }
+    public void OnCollisionEnter()
+    {
+        c--;
+        x.text = c.ToString();
     }
     // Update is called once per frame
 }
